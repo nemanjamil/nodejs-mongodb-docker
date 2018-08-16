@@ -1,0 +1,20 @@
+version: '2'
+services: 
+  app:
+    container_name: nmd
+    restart: always
+    build: .
+    ports: 
+      - '80:3000'
+    links:
+      - mongo
+    # volumes:
+    #   - '/c/wamp64/www/nodejs-mongodb-docker'
+    #   - '/usr/src/app/'
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - '27017:27017'
+
+

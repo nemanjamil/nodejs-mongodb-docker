@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    //- h3= title
+
+    div.container.mb-2.mt-4
+      div.row  
+        div.col-sm
+            h5 Add Item
+            form(method='post', action='/item/add')
+                .form-group
+                    label(for='exampleInputEmail1') Name 
+                    input#exampleInputEmail1.form-control(placeholder='Enter name', 
+                     name='name', type='text')
+                button.btn.btn-primary(type='submit') Submit
+
+        div.col-sm
+            h5 List of items
+            ul.list-group
+                if articles
+                    each val, index in articles
+                        li.list-group-item
+                            a(href="/article/"+val.name)=  val.title
+
+
+                if items
+                    each val, index in items
+                        li.list-group-item
+                            a(href="/article/"+val.name)=  val.name

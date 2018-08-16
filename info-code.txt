@@ -1,0 +1,19 @@
+# START
+git init
+npm shrinkwrap
+npm i express mongoose body-parser pug 
+npm i -D nodemon  
+
+# MONGO DB
+// go to mongo install dir, and CD bin folder
+mongo
+show dbs 
+use nodejs-docker
+
+
+# START DOCKER COMPOSE
+docker-compose up
+
+# TEST CODE
+https://github.com/docker/compose/issues/4303
+set COMPOSE_CONVERT_WINDOWS_PATHS=1
