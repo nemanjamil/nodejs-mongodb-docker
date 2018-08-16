@@ -10,15 +10,22 @@ docker info
 
 # CREATE
 docker container run -it --publish 80:80 nginx
+
 docker container run --detach --publish 8080:80 --name mydocker nginx  // go to http://localhost:8080/
+
 docker container run -d -p 8081:80 --name myapcahe httpd
+
 docker container run -d -p 3306:3306 --name minemysql mysql
 
+
 // ubuntu
+
 docker container run --detach --publish 8080:80 --volume $(pwd):/usr/share/nginx/html --name docloc1 nginx
 
 // win
+
 docker container run --detach --publish 8080:80 -v /c/wamp64/www/nodejs-mongodb-docker://usr/share/nginx/html --name docloc1 nginx
+
 docker container run --detach --publish 8080:80 -v /c/wamp64/www/nodejs-mongodb-docker://usr/share/nginx/html --name docloc1 nemanjamil/nginx-website
 
 # REMOVE
